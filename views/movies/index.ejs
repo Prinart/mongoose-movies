@@ -1,0 +1,25 @@
+<%- include('../partials/header') -%>
+<h1>All Movies</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Release Year</th>
+            <th>Rating</th>
+            <th>Cast</th>
+            <th>Now Showing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% movies.forEach(movie => { %>
+        <tr>
+            <td><%= movie.title %></td>
+            <td><%= movie.releaseYear %></td>
+            <td><%= movie.mpaaRating %></td>
+            <td><%= movie.cast.join(', ') %></td>
+            <td><%= movie.cast.nowShowing ? 'Yep' : 'Nope' %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<%- include('../partials/footer') -%>

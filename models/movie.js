@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 
 const movieSchema = Schema({
     title: String,
-    releaseYear: Number,
+    releaseYear: { type: Number, default: 2000 },
     mpaaRating: String,
     cast: [String],
-    nowShowing: Boolean
+    nowShowing: { type: Boolean, default: false }
 })
 
 // compile the schema into a model and export it
